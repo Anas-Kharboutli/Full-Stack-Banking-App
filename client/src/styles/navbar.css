@@ -1,0 +1,128 @@
+nav { 
+    font-family: var(--font-rubik);
+    
+}
+
+.navbar-container {
+    display: grid;
+    grid-template-columns: 0.4fr 1fr;
+    padding: 1rem;
+    backdrop-filter: blur(30px);
+    z-index: 1000;
+}
+
+.logo img {
+    width: 6rem;
+    height: 2rem; 
+    margin-left: 1rem;
+}
+
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+}
+
+.navbar-links ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.7rem;  
+}
+
+.nav-item {
+   list-style: none;
+   font-size: 1.2rem;
+}
+
+.nav-item a {
+    padding: 0 0.8rem;
+    color: black;
+    font-size:1.1rem;
+    font-weight: 450;
+    transition: color 0.3s ease-in;
+}
+
+.nav-item a:hover {
+    color: rgb(164, 157, 157);
+}
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 2rem;
+    gap: 1.5rem;
+}
+
+.linkedin-icon {
+    color: rgb(49, 62, 178);
+    font-size: 2rem;
+}
+
+.github-icon {
+    font-size: 2.1rem;
+}
+
+
+.mobile-menu {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem 0 0;
+    backdrop-filter: blur(30px);
+    z-index: 1000;
+}
+
+.x-icon {
+    background: rgb(237, 235, 235);
+}
+
+.mobile-menu-container {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    gap: 1.8rem;
+    background: rgb(237, 235, 235);
+    transform: scale(0);
+    transition: all 0.4s ease-in;
+    opacity: 0;
+}
+
+.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.mobile-menu-links {
+    margin: 1rem 0 0 1rem;
+}
+
+.mobile-menu-links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.mobile-menu-icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 0 1rem 1rem;
+    padding-left: 0.8rem;
+}
+
+
+@media (max-width: 769px) {
+    .navbar-container {
+        display: none;
+    }
+    .mobile-menu {
+        display: flex;
+    }
+    .logo {
+        padding-left: 0.5rem;
+    }
+}
