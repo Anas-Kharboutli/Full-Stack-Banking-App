@@ -16,6 +16,12 @@ const accountSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        accountNumber: {
+            type: String
+        },
+        balance: {
+            type: Number
+        }
     },
     {timestamps: true}
 );

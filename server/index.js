@@ -2,8 +2,10 @@ import express from'express';
 import mongoose from'mongoose';
 import dotenv from 'dotenv';
 import accountRoute from './routes/account.route.js';
+import cors from 'cors';
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 dotenv.config();
 

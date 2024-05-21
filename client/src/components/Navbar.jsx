@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import '../styles/navbar.css';
 import { RiBankLine } from "react-icons/ri";
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
+
 
 const BankLogo = () => {
   const navigate = useNavigate();
@@ -10,8 +11,12 @@ const BankLogo = () => {
   return (
     <React.Fragment>
     <a href='/' onClick={() => navigate('/')}>
-    <RiBankLine />
+    <RiBankLine className='logo-img'/>
     </a>  
+    <a href='/' onClick={() => navigate('/')}>
+    <span>Bank V2.0</span>
+    </a> 
+    
   </React.Fragment>
   );
 };
@@ -25,22 +30,22 @@ const Navbar = () => {
        
       <ul>
           <li className='nav-item'>
-            <Link to="/" onClick={() => setToggleMenu(false)}>Home</Link>
+          <NavLink to="/" onClick={() => setToggleMenu(false)}>Home</NavLink>
           </li>
           <li className='nav-item'>
-            <Link to="/signin" onClick={() => setToggleMenu(false)}>Sign In</Link>
+          <NavLink to="/signin" onClick={() => setToggleMenu(false)}>Sign in</NavLink>
           </li>
           <li className='nav-item'>
-            <Link to="/signup" onClick={() => setToggleMenu(false)}>Sign Up</Link>
+          <NavLink to="/signup" onClick={() => setToggleMenu(false)}>Sign up</NavLink>
           </li>
           <li className='nav-item'>
-          <Link to="/deposit" onClick={() => setToggleMenu(false)}>Deposit</Link>
+          <NavLink to="/deposit" onClick={() => setToggleMenu(false)}>Deposit</NavLink>
           </li>
           <li className='nav-item'>
-          <Link to="/withdraw" onClick={() => setToggleMenu(false)}>Withdraw</Link>
+          <NavLink to="/withdraw" onClick={() => setToggleMenu(false)}>Withdraw</NavLink>
           </li>
           <li className='nav-item'>
-          <Link to="/accountdata" onClick={() => setToggleMenu(false)}>Account</Link>
+          <NavLink to="/accountdata" onClick={() => setToggleMenu(false)}>Account</NavLink>
           </li>
          </ul> 
     </React.Fragment>
@@ -68,9 +73,9 @@ const Navbar = () => {
       </div>
 
       {toggleMenu ? 
-       <RiCloseLine size={45} className='x-icon' onClick={() => setToggleMenu(false)} />
+       <RiCloseLine className='x-icon' onClick={() => setToggleMenu(false)} />
        :
-       <RiMenu3Line size={45} onClick={() => setToggleMenu(true)} />
+       <RiMenu3Line className='line-icon' onClick={() => setToggleMenu(true)} />
       }  
       </div>
     

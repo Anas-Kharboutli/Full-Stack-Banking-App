@@ -10,7 +10,9 @@ function App() {
     <div className="Navbar">
     <Navbar />
     </div>
+    <div className='card'>
     <Pages />
+    </div>
     
     </React.Fragment>
   );

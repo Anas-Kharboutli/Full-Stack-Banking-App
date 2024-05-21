@@ -5,6 +5,7 @@ import { Home, SignIn, SignUp, Deposit, Withdraw, AccountData } from '../pages/e
 
 const Pages = () => {
   return (
+ 
     <Routes>
         <Route path='/'            element={<Home />} />
         <Route path='/signin'      element={<SignIn />} />
@@ -13,6 +14,7 @@ const Pages = () => {
         <Route path='/withdraw'    element={<Withdraw />} />
         <Route path='/accountdata' element={<AccountData />} />
     </Routes>
+ 
   )
 }
 

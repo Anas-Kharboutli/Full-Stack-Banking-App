@@ -1,0 +1,30 @@
+.card-container {
+    margin-top: 1rem;
+    border: 1px black solid;
+    width: 30rem;
+    height: auto;
+    box-shadow: 2px 2px 5px;
+    border-radius: 0.2rem;
+}
+
+.card-container h1 {
+    font-family: var(--font-r);
+    text-align: center;
+    margin: 1.3rem 0.5rem 0;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-container p {
+    margin: 0.5rem;
+    background: rgb(247, 4, 4, 0.7);
+    padding: 0.7rem;
+    color: white;
+    font-family: var(--font-r);
+}
+
+.card-container p.inactive {
+    visibility: hidden;
+}
