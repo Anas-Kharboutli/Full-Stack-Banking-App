@@ -1,0 +1,46 @@
+.account-display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    border: 1px solid gray;
+    border-radius: 0.2rem;
+}
+
+.account-display span {
+    font-family: var(--font-r);
+    padding: 0.2rem;
+    
+}
+
+.deposit-form label {
+    margin-top: 3rem;
+    font-family: var(--font-r);
+
+}
+
+.deposit-form input {
+    border: 1px solid rgb(156, 147, 147);
+    box-shadow: 2px 2px 4px;
+    font-size: 2rem;
+    height: 2rem;
+    font-family: var(--font-m);
+}
+
+.deposit-form button {
+    border: none;
+    text-align: center;
+    padding: 0.8rem 2rem;
+    margin: 0 10rem;
+    border-radius: 0.4rem;
+    background: linear-gradient(90deg, rgb(10, 232, 84) 1%, rgb(118, 200, 171) 100%);
+    color: white;
+    font-family: var(--font-m);
+    font-weight: 500;
+    font-size: 1rem;
+
+}
+
+.deposit-form button:hover {
+    background: linear-gradient(100deg, rgb(118, 200, 171) 1%,   rgb(10, 232, 84) 100%);
+}

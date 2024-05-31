@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Card from '../components/Card';
 import axios from 'axios';
 import '../styles/signin.css';
+import { userContext } from '../components/Pages';
 
 const SignIn = () => {
 
   const navigate = useNavigate();
+  const user = useContext(userContext);
 
   const [email,setEmail]                = useState('');
   const [password,setPassword]          = useState('');
@@ -31,9 +33,35 @@ const SignIn = () => {
            setTimeout(()=> setWarning(''), 3000);
            return;
        }
+
+       try {
+        const response = await axios.post('http://localhost:8080/api/signin', { email, password });
+        const userData = response.data;
+      
+      /*
+        user.username      = userData.username;
+        user.email         = userData.email;
+        user.password      = userData.password;
+        user.accountNumber = userData.accountNumber;
+        user.balance       = userData.balance;
+      */  
+        window.localStorage.setItem("userLoggedIn", userData.username);
+        window.localStorage.setItem("email", userData.email);
+
+        navigate('/deposit');
+        window.location.reload();
+        
+      } catch (error) {
+        setWarning("Invalid email or password");
+        console.error(error);
+      }
+    
+
+
+
        //axios query to get data from mongodb and validate credentials
      
-          await axios.post('http://localhost:8080/api/signin', { email, password })     
+       /*   await axios.post('http://localhost:8080/api/signin', { email, password })     
            .then( (res) => {
             const data = res.json;
             if(res.status === 200) {
@@ -43,9 +71,9 @@ const SignIn = () => {
            }
           ) 
           .catch((error) => {console.log(error)
-            setWarning("Invalid email or password")
+            
           }
-          );    
+          );   */ 
      };
 
   return (

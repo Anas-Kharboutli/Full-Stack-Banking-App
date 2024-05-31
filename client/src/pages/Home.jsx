@@ -1,10 +1,19 @@
-import React from 'react'
+import React from 'react';
+import Card from '../components/Card';
+
+
 
 const Home = () => {
+
   return (
-    <div>
-      Home
-    </div>
+    <Card 
+    title="Home"
+    warning={""}
+    body = {
+      <h1>Welcome to bad bank</h1>
+    } 
+
+    />
   )
 }
 

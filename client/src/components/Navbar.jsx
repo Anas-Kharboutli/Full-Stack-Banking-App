@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate, NavLink } from 'react-router-dom';
 import '../styles/navbar.css';
 import { RiBankLine } from "react-icons/ri";
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
-
+import { userContext } from './Pages';
 
 const BankLogo = () => {
   const navigate = useNavigate();
@@ -22,21 +22,36 @@ const BankLogo = () => {
 };
 
 const Navbar = () => {
-
+  const user = useContext(userContext); 
+  const isLoggedIn = window.localStorage.getItem("userLoggedIn");
   const [toggleMenu, setToggleMenu ] = useState(false);
+  const navigate = useNavigate();
+ 
+   const Menu = () => {
+   
+    return (
 
-  const Menu = () => (
-    <React.Fragment>
+      isLoggedIn === null ? (
+        <React.Fragment>
        
       <ul>
           <li className='nav-item'>
           <NavLink to="/" onClick={() => setToggleMenu(false)}>Home</NavLink>
           </li>
           <li className='nav-item'>
-          <NavLink to="/signin" onClick={() => setToggleMenu(false)}>Sign in</NavLink>
+          <NavLink to="/signup" onClick={() => setToggleMenu(false)}>Sign up</NavLink>
           </li>
           <li className='nav-item'>
-          <NavLink to="/signup" onClick={() => setToggleMenu(false)}>Sign up</NavLink>
+          <NavLink to="/signin" onClick={() => setToggleMenu(false)}>Sign in</NavLink>
+          </li>
+         </ul> 
+    </React.Fragment>
+      ) : (
+        <React.Fragment>
+       
+      <ul>
+          <li className='nav-item'>
+          <NavLink to="/" onClick={() => setToggleMenu(false)}>Home</NavLink>
           </li>
           <li className='nav-item'>
           <NavLink to="/deposit" onClick={() => setToggleMenu(false)}>Deposit</NavLink>
@@ -45,11 +60,22 @@ const Navbar = () => {
           <NavLink to="/withdraw" onClick={() => setToggleMenu(false)}>Withdraw</NavLink>
           </li>
           <li className='nav-item'>
-          <NavLink to="/accountdata" onClick={() => setToggleMenu(false)}>Account</NavLink>
+          <NavLink to="/accountdata" onClick={() => setToggleMenu(false)}>{window.localStorage.getItem("userLoggedIn")}</NavLink>
+          </li>
+          <li>
+            <button onClick={() =>{ localStorage.clear();
+             navigate('/');
+             window.location.reload();              
+            }}>
+              Logout
+            </button>
           </li>
          </ul> 
     </React.Fragment>
-  );
+      )
+    
+    
+  )};
 
 
   return (
