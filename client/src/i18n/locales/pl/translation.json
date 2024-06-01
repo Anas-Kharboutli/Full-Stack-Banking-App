@@ -1,0 +1,34 @@
+{
+    "Home" : "Strona Glówna",
+    "Sign in" : "Zaloguj",
+    "Sign up" : "Zarejestruj się",
+    "Logout" : "wyloguj",
+
+    "Forex" : {
+        "Forex" : "Forex",
+        "Exchange Rates" : "Kurs wymiany",
+        "Base Currency" : "Waluta bazowa",
+        "Currency" : "Waluta",
+        "Rate" : "Kurs"
+        },
+
+    "Deposit" : {
+        "Deposit" : "wpłata",
+        "Account Number" : "Numer konta",
+        "Balance" : "Balansować",
+        "Deposit Amount" : "Kwota depozytu",
+        "Amount of" : "Ilość",
+        "is credited to" : "przypisuje się",
+        "Make New Deposit" : "Dokonaj nowego depozytu"
+    },
+
+    "Withdraw" : {
+        "Withdraw" : "wypłata",
+        "Account Number" : "Numer konta",
+        "Balance" : "Balansować",
+        "Withdrawal Amount" : "Kwota wypłaty",
+        "Amount of" : "Ilość",
+        "is deducted from" : "jest odliczany",
+        "Withdraw again" : "Wypłać się ponownie"
+    } 
+}

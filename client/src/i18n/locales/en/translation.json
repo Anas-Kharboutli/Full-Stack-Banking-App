@@ -1,0 +1,36 @@
+{
+    "Home" : "Home",
+    "Sign in" : "Sign in",
+    "Sign up" : "Sign up",
+    "Logout" : "Logout",
+
+    "Forex" : {
+        "Forex" : "Forex",
+        "Exchange Rates" : "Exchange Rates",
+        "Base Currency" : "Base Currency",
+        "Currency" : "Currency",
+        "Rate" : "Rate"
+    },
+
+    "Deposit" : {
+        "Deposit" : "Deposit",
+        "Account Number" : "Account Number",
+        "Balance" : "Balance",
+        "Deposit Amount" : "Deposit Amount",
+        "Amount of" : "Amount of",
+        "is credited to" : "is credited to",
+        "Make New Deposit" : "Make New Deposit"
+    },    
+
+    "Withdraw" : {
+        "Withdraw" : "Withdraw",
+        "Account Number" : "Account Number",
+        "Balance" : "Balance",
+        "Withdrawal Amount" : "Withdrawal Amount",
+        "Amount of" : "Amount of",
+        "is deducted from" : "is deducted from",
+        "Withdraw again" : "Withdraw again"
+    }
+    
+
+}

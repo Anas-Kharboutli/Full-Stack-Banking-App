@@ -4,6 +4,8 @@ import '../styles/navbar.css';
 import { RiBankLine } from "react-icons/ri";
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import { userContext } from './Pages';
+import LanguageSelector from './LanguageSelector';
+import { useTranslation } from 'react-i18next';
 
 const BankLogo = () => {
   const navigate = useNavigate();
@@ -26,6 +28,7 @@ const Navbar = () => {
   const isLoggedIn = window.localStorage.getItem("userLoggedIn");
   const [toggleMenu, setToggleMenu ] = useState(false);
   const navigate = useNavigate();
+  const { t } = useTranslation();
  
    const Menu = () => {
    
@@ -36,13 +39,13 @@ const Navbar = () => {
        
       <ul>
           <li className='nav-item'>
-          <NavLink to="/" onClick={() => setToggleMenu(false)}>Home</NavLink>
+          <NavLink to="/" onClick={() => setToggleMenu(false)}>{t("Home")}</NavLink>
           </li>
           <li className='nav-item'>
-          <NavLink to="/signup" onClick={() => setToggleMenu(false)}>Sign up</NavLink>
+          <NavLink to="/signup" onClick={() => setToggleMenu(false)}>{t("Sign up")}</NavLink>
           </li>
           <li className='nav-item'>
-          <NavLink to="/signin" onClick={() => setToggleMenu(false)}>Sign in</NavLink>
+          <NavLink to="/signin" onClick={() => setToggleMenu(false)}>{t("Sign in")}</NavLink>
           </li>
          </ul> 
     </React.Fragment>
@@ -51,23 +54,29 @@ const Navbar = () => {
        
       <ul>
           <li className='nav-item'>
-          <NavLink to="/" onClick={() => setToggleMenu(false)}>Home</NavLink>
+          <NavLink to="/" onClick={() => setToggleMenu(false)}>{t("Home")}</NavLink>
           </li>
           <li className='nav-item'>
-          <NavLink to="/deposit" onClick={() => setToggleMenu(false)}>Deposit</NavLink>
+          <NavLink to="/forex" onClick={() => setToggleMenu(false)}>{t("Forex.Forex")}</NavLink>
           </li>
           <li className='nav-item'>
-          <NavLink to="/withdraw" onClick={() => setToggleMenu(false)}>Withdraw</NavLink>
+          <NavLink to="/deposit" onClick={() => setToggleMenu(false)}>{t("Deposit.Deposit")}</NavLink>
+          </li>
+          <li className='nav-item'>
+          <NavLink to="/withdraw" onClick={() => setToggleMenu(false)}>{t("Withdraw.Withdraw")}</NavLink>
           </li>
           <li className='nav-item'>
           <NavLink to="/accountdata" onClick={() => setToggleMenu(false)}>{window.localStorage.getItem("userLoggedIn")}</NavLink>
           </li>
           <li>
-            <button onClick={() =>{ localStorage.clear();
+          <LanguageSelector />
+          </li>
+          <li>
+            <button onClick={() =>{ localStorage.removeItem("userLoggedIn");
              navigate('/');
              window.location.reload();              
             }}>
-              Logout
+              {t("Logout")}
             </button>
           </li>
          </ul> 

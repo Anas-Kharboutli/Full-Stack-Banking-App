@@ -3,10 +3,12 @@ import axios from "axios";
 import Card from '../components/Card';
 import { userContext } from '../components/Pages';
 import '../styles/deposit.css';
+import { useTranslation } from 'react-i18next';
 
 const Deposit = () => {
 
   const ctx = useContext(userContext);
+  const { t } = useTranslation();
   //const balance = user.balance;
 
   const accountNumber = ctx.user.accountNumber;
@@ -59,18 +61,18 @@ const Deposit = () => {
   return (
     
     <Card
-    title={"Deposit"}
+    title={t("Deposit.Deposit")}
     warning={warning}
     body={ show ? (
       <React.Fragment>
 
         <div className='account-display'>
-          <span>Account Number: {accountNumber}</span>
-          <span>Balance: &euro; {balance}</span>
+          <span>{t("Deposit.Account Number")}: {accountNumber}</span>
+          <span>{t("Deposit.Balance")}: &euro; {balance}</span>
         </div>
             <form className='deposit-form'>
       <div>   
-      <label htmlFor='deposit'>Deposit Amount</label>
+      <label htmlFor='deposit'>{t("Deposit.Deposit Amount")}</label>
       <input 
          type="number"
          id='deposit'
@@ -85,7 +87,7 @@ const Deposit = () => {
        <button type="submit" 
        onClick={handleDeposit}
        disabled={btnDisable}
-       >Deposit</button>
+       >{t("Deposit.Deposit")}</button>
        </div>
 
        </form>
@@ -94,13 +96,13 @@ const Deposit = () => {
 
     ) : (<React.Fragment>
         <h5 style={{padding:"5px" ,background: "rgb(26, 181, 96)" ,color: "white"}}>
-        Amount of {deposit}$ is credited to: </h5>
-        <b>Account number: {accountNumber}</b><br/><br/>
+        {t("Deposit.Amount of")} {deposit}&euro {t("Deposit.is credited to")}: </h5>
+        <b>{t("Deposit.Account Number")}: {accountNumber}</b><br/><br/>
       
         <div>       
         <button type="submit" 
         onClick={reset}
-        >Make New Deposit</button>
+        >{t("Deposit.Make New Deposit")}</button>
         </div>
        
     </React.Fragment>

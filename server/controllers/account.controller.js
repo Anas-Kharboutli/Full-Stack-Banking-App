@@ -1,7 +1,10 @@
 import Account from "../models/account.model.js";
 import bcryptjs from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import axios from 'axios';
+import dotenv from 'dotenv';
 
+dotenv.config();
 
 export const signup = async (req, res) => {
     const { username, email, password } = req.body;
@@ -135,7 +138,24 @@ export const retrieveData = async (req,res) => {
         console.error(error);
         res.status(500).json({ message: 'Internal server error' });
     }
-}
+};
 
-withdraw
+
+/* export const exchangeRates = async (req,res) => {
+
+    const API_KEY = process.env.EXCHANGE_RATE_API; // Replace with your actual API key
+    const BASE_URL = 'https://open.er-api.com/v6/latest';
+
+    const { base } = req.params;
+
+    try {
+        const response = await axios.get(`${BASE_URL}/${base}`);
+        res.json(response.data);
+
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to fetch exchange rates' });
+    }
+};
+
+*/
 

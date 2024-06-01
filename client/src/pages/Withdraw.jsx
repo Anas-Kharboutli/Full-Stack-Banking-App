@@ -2,10 +2,12 @@ import React, { useState, useContext } from 'react';
 import axios from "axios";
 import Card from '../components/Card';
 import { userContext } from '../components/Pages';
+import { useTranslation } from 'react-i18next';
 
 const Withdraw = () => {
 
   const ctx = useContext(userContext);
+  const { t } = useTranslation();
   //const balance = user.balance;
 
   const accountNumber = ctx.user.accountNumber;
@@ -59,18 +61,18 @@ const Withdraw = () => {
 
   return (
     <Card
-    title={"Withdraw"}
+    title={t("Withdraw.Withdraw")}
     warning={warning}
     body={ show ? (
       <React.Fragment>
 
         <div className='account-display'>
-          <span>Account Number: {accountNumber}</span>
-          <span>Balance: &euro; {balance}</span>
+          <span>{t("Withdraw.Account Number")}: {accountNumber}</span>
+          <span>{t("Withdraw.Balance")}: &euro; {balance}</span>
         </div>
             <form className='deposit-form'>
       <div>   
-      <label htmlFor='withdraw'>Withdrawal Amount</label>
+      <label htmlFor='withdraw'>{t("Withdraw.Withdrawal Amount")}</label>
       <input 
          type="number"
          id='withdraw'
@@ -85,7 +87,7 @@ const Withdraw = () => {
        <button type="submit" 
        onClick={handleWithdraw}
        disabled={btnDisable}
-       >Withdraw</button>
+       >{t("Withdraw.Withdraw")}</button>
        </div>
 
        </form>
@@ -94,13 +96,13 @@ const Withdraw = () => {
 
     ) : (<React.Fragment>
         <h5 style={{padding:"5px" ,background: "rgb(26, 181, 96)" ,color: "white"}}>
-        Amount of {withdraw}$ is deducted from: </h5>
-        <b>Account number: {accountNumber}</b><br/><br/>
+        {t("Withdraw.Amount of")} {withdraw}&euro {t("Withdraw.is deducted from")}: </h5>
+        <b>{t("Withdraw.Account Number")}: {accountNumber}</b><br/><br/>
       
         <div>       
         <button type="submit" 
         onClick={reset}
-        >Withdraw again</button>
+        >{t("Withdraw.Withdraw again")}</button>
         </div>
        
     </React.Fragment>
