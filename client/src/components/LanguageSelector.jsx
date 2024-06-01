@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import i18n from '../i18n/i18n';
+import '../styles/languageSelector.css';
 
 const LanguageSelector = () => {
 
@@ -13,10 +14,14 @@ const LanguageSelector = () => {
     }
 
   return (
-    <div>
+    <div className='language-selector-container'>
         <select defaultValue={selectLanguage} onChange={chooseLanguage}>
-            <option value='en'>Englisg</option>
-            <option value='pl'>Polish</option>
+            <option value='en'>
+              ENG
+            </option>
+            <option value='pl'>
+              PL
+            </option>
         </select>
       
     </div>

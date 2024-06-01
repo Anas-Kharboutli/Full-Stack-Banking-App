@@ -15,7 +15,7 @@ function App() {
     
     <div className='card'>
     <Pages />
-    </div>
+    </div> 
     
     </ShareContext>
     </React.Fragment>

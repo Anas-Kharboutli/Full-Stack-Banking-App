@@ -8,7 +8,7 @@ const Card = ({title, warning, body}) => {
 
         <div className='card-body'>
             {body}
-        </div>
+        </div> 
  
         <p className={warning === "" ? "inactive" : ""}>{warning}</p>
       

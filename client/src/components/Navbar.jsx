@@ -3,10 +3,9 @@ import { useNavigate, NavLink } from 'react-router-dom';
 import '../styles/navbar.css';
 import { RiBankLine } from "react-icons/ri";
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
-import { userContext } from './Pages';
 import LanguageSelector from './LanguageSelector';
 import { useTranslation } from 'react-i18next';
-
+ 
 const BankLogo = () => {
   const navigate = useNavigate();
 
@@ -24,7 +23,7 @@ const BankLogo = () => {
 };
 
 const Navbar = () => {
-  const user = useContext(userContext); 
+
   const isLoggedIn = window.localStorage.getItem("userLoggedIn");
   const [toggleMenu, setToggleMenu ] = useState(false);
   const navigate = useNavigate();
@@ -45,7 +44,10 @@ const Navbar = () => {
           <NavLink to="/signup" onClick={() => setToggleMenu(false)}>{t("Sign up")}</NavLink>
           </li>
           <li className='nav-item'>
-          <NavLink to="/signin" onClick={() => setToggleMenu(false)}>{t("Sign in")}</NavLink>
+          <NavLink to="/signin" onClick={() => setToggleMenu(false)}>{t("Login")}</NavLink>
+          </li>
+          <li>
+          <LanguageSelector />
           </li>
          </ul> 
     </React.Fragment>
@@ -68,10 +70,10 @@ const Navbar = () => {
           <li className='nav-item'>
           <NavLink to="/accountdata" onClick={() => setToggleMenu(false)}>{window.localStorage.getItem("userLoggedIn")}</NavLink>
           </li>
-          <li>
+          <li className='nav-item'>
           <LanguageSelector />
           </li>
-          <li>
+          <li className='nav-item'>
             <button onClick={() =>{ localStorage.removeItem("userLoggedIn");
              navigate('/');
              window.location.reload();              
@@ -82,8 +84,6 @@ const Navbar = () => {
          </ul> 
     </React.Fragment>
       )
-    
-    
   )};
 
 
