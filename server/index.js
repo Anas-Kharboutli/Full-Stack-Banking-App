@@ -17,6 +17,9 @@ mongoose
 
 app.use('/api', accountRoute);
 
+export default app;
 
+/*
 const port = 8080;
 app.listen(port, console.log(`Server running on port: ${port}`));
+*/
