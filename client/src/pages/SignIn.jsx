@@ -37,14 +37,7 @@ const SignIn = () => {
        try {
         const response = await axios.post('http://localhost:8080/api/signin', { email, password });
         const userData = response.data;
-      
-      /*
-        user.username      = userData.username;
-        user.email         = userData.email;
-        user.password      = userData.password;
-        user.accountNumber = userData.accountNumber;
-        user.balance       = userData.balance;
-      */  
+
         window.localStorage.setItem("userLoggedIn", userData.username);
         window.localStorage.setItem("email", userData.email);
 
@@ -55,30 +48,11 @@ const SignIn = () => {
         setWarning("Invalid email or password");
         console.error(error);
       }
-    
-
-
-
-       //axios query to get data from mongodb and validate credentials
-     
-       /*   await axios.post('http://localhost:8080/api/signin', { email, password })     
-           .then( (res) => {
-            const data = res.json;
-            if(res.status === 200) {
-              console.log(data);
-              navigate('/');
-            }
-           }
-          ) 
-          .catch((error) => {console.log(error)
-            
-          }
-          );   */ 
      };
 
   return (
     <Card 
-    title={"Sign in"}
+    title={"Login"}
     warning={warning}
     body={
       <React.Fragment>

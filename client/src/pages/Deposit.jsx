@@ -4,6 +4,7 @@ import Card from '../components/Card';
 import { userContext } from '../components/Pages';
 import '../styles/deposit.css';
 import { useTranslation } from 'react-i18next';
+import { NewTransactions } from './exports';
 
 const Deposit = () => {
 
@@ -36,27 +37,18 @@ const Deposit = () => {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:8080/api/deposit', { accountNumber, deposit } );
-      const userData = response.data;
-     
+      await axios.post('http://localhost:8080/api/deposit', { accountNumber, deposit } );    
       setShow(false);
-      
-      
-
     } catch (error) {
       console.error(error);
     }  
   }
-
    //resetting values in case user wishes to make another deposit
    function reset () {
     setDeposit(0);
     setShow(true);
     window.location.reload();
-    
-
-}
-
+  }
 
   return (
     
@@ -66,11 +58,14 @@ const Deposit = () => {
     body={ show ? (
       <React.Fragment>
 
-        <div className='account-display'>
-          <span>{t("Deposit.Account Number")}: {accountNumber}</span>
-          <span>{t("Deposit.Balance")}: &euro; {balance}</span>
-        </div>
-            <form className='deposit-form'>
+      <div className='account-display'>
+        <span>{t("Deposit.Account Number")}: {accountNumber}</span>
+        <div>
+        <span>{t("Deposit.Balance")}:</span> <span>&euro; {balance}</span>
+      </div>
+      </div>
+               
+      <form className='deposit-form'>
       <div>   
       <label htmlFor='deposit'>{t("Deposit.Deposit Amount")}</label>
       <input 
@@ -83,7 +78,7 @@ const Deposit = () => {
            }} />
        </div>
 
-       <div>
+       <div className='transactions-btn'>
        <button type="submit" 
        onClick={handleDeposit}
        disabled={btnDisable}
@@ -95,14 +90,16 @@ const Deposit = () => {
        </React.Fragment>
 
     ) : (<React.Fragment>
-        <h5 style={{padding:"5px" ,background: "rgb(26, 181, 96)" ,color: "white"}}>
-        {t("Deposit.Amount of")} {deposit}&euro {t("Deposit.is credited to")}: </h5>
-        <b>{t("Deposit.Account Number")}: {accountNumber}</b><br/><br/>
-      
-        <div>       
-        <button type="submit" 
-        onClick={reset}
-        >{t("Deposit.Make New Deposit")}</button>
+         
+        <div className='deposit-conirm-msg'>
+        <h5>
+        {t("Deposit.Amount of")} {deposit} &euro; {t("Deposit.is credited to")}: </h5>
+        <p>{t("Deposit.Account Number")}: {accountNumber}</p>
+        </div>
+
+        <div className='transactions-n-btn' 
+        onClick={()=> setTimeout(reset, 1300)}>       
+        <NewTransactions />
         </div>
        
     </React.Fragment>

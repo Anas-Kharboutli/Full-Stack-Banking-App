@@ -5,35 +5,45 @@
     margin-top: 1rem;
     border: 1px solid gray;
     border-radius: 0.2rem;
+    background: black;
+    color: white;
 }
 
 .account-display span {
     font-family: var(--font-r);
     padding: 0.2rem;
-    
+}
+
+.account-display span:last-child {
+    font-size: 1.5rem; 
 }
 
 .deposit-form label {
     margin-top: 3rem;
     font-family: var(--font-r);
-
 }
 
 .deposit-form input {
     border: 1px solid rgb(156, 147, 147);
     box-shadow: 2px 2px 4px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     height: 2rem;
     font-family: var(--font-m);
 }
 
-.deposit-form button {
+.transactions-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transactions-btn button {
     border: none;
     text-align: center;
     padding: 0.8rem 2rem;
-    margin: 0 10rem;
+    margin: 1rem 0 0 0;
     border-radius: 0.4rem;
-    background: linear-gradient(90deg, rgb(10, 232, 84) 1%, rgb(118, 200, 171) 100%);
+    background: rgb(7, 159, 7);
     color: white;
     font-family: var(--font-m);
     font-weight: 500;
@@ -41,6 +51,44 @@
 
 }
 
-.deposit-form button:hover {
-    background: linear-gradient(100deg, rgb(118, 200, 171) 1%,   rgb(10, 232, 84) 100%);
+.transactions-btn button:hover {
+    background: rgb(5, 98, 5);
+}
+
+.deposit-conirm-msg {
+    margin-bottom: 1.5rem;
+}
+
+.deposit-conirm-msg h5 {
+    font-family: var(--font-m);
+    font-size: 1.3rem;
+    margin: 1rem 0 0.5rem;
+}
+
+.deposit-conirm-msg p {
+    margin: 0;
+    background: none;
+    padding: 0;
+    color: black;
+}
+
+.transactions-n-btn {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+@media (max-width: 769px) {
+
+    .account-display span {
+        font-size: 0.8rem;
+    }
+    
+    .account-display span:last-child {
+        font-size: 1.2rem; 
+    }
+
+    .transactions-btn button {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
 }

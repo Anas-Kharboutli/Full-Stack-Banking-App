@@ -40,7 +40,7 @@ const SignUp = () => {
   const [ show, setShow ]               = useState(true);
  
   //creating input validation functions 
-  const isValidName     = (nameInput)     => /^[a-zA-Z ]+$/.test(nameInput);
+  const isValidName     = (nameInput)     => /^[a-zA-Z-9 ]+$/.test(nameInput);
   const isValidEmail    = (emailInput)    => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput);
   const isValidPassword = (passwordInput) => passwordInput.length >= 8;
   const isConfirmedPwd  = (pwdInput)      => pwdInput === password;
@@ -160,7 +160,7 @@ const SignUp = () => {
 
        <div className='have-account'>
        <span>Already have an account ?</span>
-       <Link to='/signin'>Sign in </Link>
+       <Link to='/signin'>Login </Link>
        </div>
 
        </React.Fragment>

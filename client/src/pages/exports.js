@@ -6,8 +6,9 @@ import Withdraw from './Withdraw';
 import AccountData from './AccountData';
 import Forex from './Forex';
 import LanguageSelector from '../components/LanguageSelector';
+import NewTransactions from '../components/NewTransactions';
 
 
 
 
-export { Home, SignIn, SignUp, Deposit, Withdraw, AccountData, Forex, LanguageSelector };
+export { Home, SignIn, SignUp, Deposit, Withdraw, AccountData, Forex, LanguageSelector, NewTransactions };

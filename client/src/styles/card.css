@@ -8,10 +8,15 @@
     background: white;
 }
 
-.card-container h1 {
-    font-family: var(--font-r);
+.card-title h1 {
+    font-family: var(--font-m);
     text-align: center;
     margin: 1.3rem 0.5rem 0;
+    color: rgb(23, 99, 23);
+   
+    font-weight: 800;
+    border-radius: 0.2rem;
+    
 }
 
 .card-body {
@@ -28,4 +33,25 @@
 
 .card-container p.inactive {
     visibility: hidden;
+}
+
+.footer p {
+    background: none;
+    color: black;
+    margin: 0;
+    padding: 0 0.2rem 0.1rem;
+    font-size: 0.8rem;
+
+}
+
+@media (max-width: 769px) {
+    .card-container {
+        width: 25rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .card-container {
+        width: 25rem;
+    }
 }

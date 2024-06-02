@@ -3,6 +3,7 @@ import axios from "axios";
 import Card from '../components/Card';
 import { userContext } from '../components/Pages';
 import { useTranslation } from 'react-i18next';
+import { NewTransactions } from './exports';
 
 const Withdraw = () => {
 
@@ -41,17 +42,12 @@ const Withdraw = () => {
     return;
     }
     try {
-      const response = await axios.post('http://localhost:8080/api/withdraw', { accountNumber, withdraw } );
-      const userData = response.data;
-     
+      await axios.post('http://localhost:8080/api/withdraw', { accountNumber, withdraw } );
       setShow(false);
-      
-
     } catch (error) {
       console.error(error);
     }  
   }
-
    //resetting values in case user wishes to make another deposit
    function reset () {
     setWithdraw(0);
@@ -66,10 +62,13 @@ const Withdraw = () => {
     body={ show ? (
       <React.Fragment>
 
-        <div className='account-display'>
-          <span>{t("Withdraw.Account Number")}: {accountNumber}</span>
-          <span>{t("Withdraw.Balance")}: &euro; {balance}</span>
-        </div>
+      <div className='account-display'>
+        <span>{t("Withdraw.Account Number")}: {accountNumber}</span>
+        <div>
+        <span>{t("Withdraw.Balance")}:</span> <span>&euro; {balance}</span>
+      </div>
+      </div>
+
             <form className='deposit-form'>
       <div>   
       <label htmlFor='withdraw'>{t("Withdraw.Withdrawal Amount")}</label>
@@ -83,7 +82,7 @@ const Withdraw = () => {
            }} />
        </div>
 
-       <div>
+       <div className='transactions-btn'>
        <button type="submit" 
        onClick={handleWithdraw}
        disabled={btnDisable}
@@ -95,20 +94,20 @@ const Withdraw = () => {
        </React.Fragment>
 
     ) : (<React.Fragment>
-        <h5 style={{padding:"5px" ,background: "rgb(26, 181, 96)" ,color: "white"}}>
-        {t("Withdraw.Amount of")} {withdraw}&euro {t("Withdraw.is deducted from")}: </h5>
-        <b>{t("Withdraw.Account Number")}: {accountNumber}</b><br/><br/>
+
+        <div className='deposit-conirm-msg'>
+        <h5>
+        {t("Withdraw.Amount of")} {withdraw} &euro; {t("Withdraw.is deducted from")}: </h5>
+        <p>{t("Withdraw.Account Number")}: {accountNumber}</p>
+        </div>
       
-        <div>       
-        <button type="submit" 
-        onClick={reset}
-        >{t("Withdraw.Withdraw again")}</button>
+        <div className='transactions-n-btn' 
+        onClick={()=> setTimeout(reset, 1300)}>       
+        <NewTransactions />
         </div>
        
     </React.Fragment>
-  )
-
-          
+  )     
        }
        />
   )

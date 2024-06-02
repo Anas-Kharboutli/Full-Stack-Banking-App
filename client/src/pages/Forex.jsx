@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Card from '../components/Card';
 import { useTranslation } from 'react-i18next';
+import '../styles/forex.css'; 
 
 const Forex = () => {
     const [rates, setRates] = useState({});
@@ -37,9 +38,9 @@ const Forex = () => {
     title={"Forex"}
     warning={""}
     body={
-        <div className="App">
+        <div className="forex-container">
         <h1>{t("Forex.Exchange Rates")}</h1>
-        <div>
+        <div className='base-currency'>
             <label htmlFor="base">{t("Forex.Base Currency")}: </label>
             <select id="base" value={base} onChange={(e) => setBase(e.target.value)}>
                 <option value="USD">USD</option>
@@ -47,10 +48,9 @@ const Forex = () => {
                 <option value="GBP">GBP</option>
                 <option value="JPY">JPY</option>
                 <option value="PLN">PLN</option>
-                {/* Add more options as needed */}
             </select>
         </div>
-        <table>
+        <table className="forex-table">
             <thead>
                 <tr>
                     <th>{t("Forex.Currency")}</th>
@@ -69,10 +69,7 @@ const Forex = () => {
     </div>
 
     }
-
     />
-
-   
   )
 }
 

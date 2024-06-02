@@ -1,0 +1,62 @@
+.forex-container h1 {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2rem;
+}
+
+.base-currency {
+    margin-bottom: 1rem;
+}
+.base-currency label {
+    font-family: var(--font-m);
+}
+
+.base-currency select {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.forex-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.forex-table th, .forex-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.forex-table thead {
+    background-color: #f2f2f2;
+}
+
+.forex-table th {
+    background-color: #033821;
+    color: #ffffff;
+}
+
+.forex-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.forex-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.forex-table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+@media (max-width: 769px) {
+    .forex-container h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .forex-container h1 {
+        font-size: 1.5rem;
+    }
+}

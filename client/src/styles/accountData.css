@@ -1,0 +1,19 @@
+.account-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.account-info-container table {
+    font-family: var(--font-p);
+}
+
+.account-info-container table, 
+.account-info-container tr,
+.account-info-container td, 
+.account-info-container th {
+    border: 1px solid black;
+    text-align: start;
+    padding: 0.3rem;
+}
+

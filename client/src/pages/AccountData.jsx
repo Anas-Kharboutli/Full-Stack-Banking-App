@@ -1,60 +1,41 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { userContext } from '../components/Pages';
 import Card from '../components/Card';
-import axios from 'axios';
+import '../styles/accountData.css';
 
 const AccountData = () => {
   const ctx = useContext(userContext); 
-
-    //extracting all data coming from the mongodb array
-    /*
-    let users = user.map((user) => (
-      <ul>
-      <li key={user._id}>
-      <b>Account Number: </b> {user.accountNumber} <br/>   
-      <b>Username:       </b> {user.userName}      <br/> 
-      <b>Email:          </b> {user.email}         <br/> 
-      <b>Password:       </b> {user.password}      <br/> 
-      <b>Balance:        </b> {user.balance}$      <br/> 
-      </li>   
-      </ul> 
-
-      <li>{user.email}</li>
-        <li>{user.password}</li>
-        <li>{user.accountNumber}</li>
-        <li>{user.balance}</li>
-
-
-    ));
-    */
   
   return (
     <Card 
-    title={"Account Information"}
+    title={"Your Account"}
     warning={""}
     body={
-      <>
-      <ol>
-        <li>{ctx.user.username}</li>
-        <li>{ctx.user.email}</li>
-        <li>{ctx.user.password}</li>
-        <li>{ctx.user.accountNumber}</li>
-        <li>{ctx.user.balance}</li>
-        
 
-      </ol>
-      
-      
-      
-      
-      
+      <div className='account-info-container'>
+      <table>
+          <tr>
+          <th>Username</th>
+          <td>{ctx.user.username}</td>
+          </tr>
 
+          <tr>
+          <th>Email</th>
+          <td>{ctx.user.email}</td>
+          </tr>
 
-    
-    
-      </>
+          <tr>
+          <th>Account Number</th>
+          <td>{ctx.user.accountNumber}</td>
+          </tr>
+
+          <tr>
+          <th>Balance</th>
+          <td>{ctx.user.balance} &euro;</td>
+          </tr>
+      </table>
+      </div>
     }
-
     />
   )
 }

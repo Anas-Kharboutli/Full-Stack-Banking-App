@@ -7,17 +7,13 @@ import LanguageSelector from './LanguageSelector';
 import { useTranslation } from 'react-i18next';
  
 const BankLogo = () => {
-  const navigate = useNavigate();
 
   return (
     <React.Fragment>
-    <a href='/' onClick={() => navigate('/')}>
+
     <RiBankLine className='logo-img'/>
-    </a>  
-    <a href='/' onClick={() => navigate('/')}>
     <span>Bank V2.0</span>
-    </a> 
-    
+
   </React.Fragment>
   );
 };
@@ -46,7 +42,7 @@ const Navbar = () => {
           <li className='nav-item'>
           <NavLink to="/signin" onClick={() => setToggleMenu(false)}>{t("Login")}</NavLink>
           </li>
-          <li>
+          <li className='nav-item'>
           <LanguageSelector />
           </li>
          </ul> 
@@ -55,9 +51,6 @@ const Navbar = () => {
         <React.Fragment>
        
       <ul>
-          <li className='nav-item'>
-          <NavLink to="/" onClick={() => setToggleMenu(false)}>{t("Home")}</NavLink>
-          </li>
           <li className='nav-item'>
           <NavLink to="/forex" onClick={() => setToggleMenu(false)}>{t("Forex.Forex")}</NavLink>
           </li>
