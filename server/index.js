@@ -3,6 +3,7 @@ import mongoose from'mongoose';
 import dotenv from 'dotenv';
 import accountRoute from './routes/account.route.js';
 import cors from 'cors';
+import path from 'path';
 
 const app = express();
 app.use(cors());
@@ -15,11 +16,17 @@ mongoose
 .catch((error) => console.log(error));
 
 
+const __dirname = path.resolve();
+
 app.use('/api', accountRoute);
+
+app.use(express.static(path.join(__dirname, '/client/build')));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+});
 
 export default app;
 
-/*
-const port = 8080;
+
+const port = 3000;
 app.listen(port, console.log(`Server running on port: ${port}`));
-*/
