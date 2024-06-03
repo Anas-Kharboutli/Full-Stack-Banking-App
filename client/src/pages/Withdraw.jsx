@@ -42,7 +42,7 @@ const Withdraw = () => {
     return;
     }
     try {
-      await axios.post('http://localhost:8080/api/withdraw', { accountNumber, withdraw } );
+      await axios.post('http://localhost:3000/api/withdraw', { accountNumber, withdraw } );
       setShow(false);
     } catch (error) {
       console.error(error);

@@ -37,7 +37,7 @@ const Deposit = () => {
       return;
     }
     try {
-      await axios.post('http://localhost:8080/api/deposit', { accountNumber, deposit } );    
+      await axios.post('http://localhost:3000/api/deposit', { accountNumber, deposit } );    
       setShow(false);
     } catch (error) {
       console.error(error);

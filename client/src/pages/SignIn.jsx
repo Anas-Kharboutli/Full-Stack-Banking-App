@@ -35,7 +35,7 @@ const SignIn = () => {
        }
 
        try {
-        const response = await axios.post('http://localhost:8080/api/signin', { email, password });
+        const response = await axios.post('http://localhost:3000/api/signin', { email, password });
         const userData = response.data;
 
         window.localStorage.setItem("userLoggedIn", userData.username);

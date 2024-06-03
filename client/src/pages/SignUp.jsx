@@ -77,7 +77,7 @@ const SignUp = () => {
    
     //posting data to database using http request
    
-    await axios.post('http://localhost:8080/api/signup', {username,email,password})
+    await axios.post('http://localhost:3000/api/signup', {username,email,password})
    .then( (res) => {
     if(res.status === 200) {
       setShow(false);
