@@ -1,14 +1,14 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Card from '../components/Card';
 import axios from 'axios';
 import '../styles/signin.css';
-import { userContext } from '../components/Pages';
+import { useTranslation } from 'react-i18next';
 
 const SignIn = () => {
 
   const navigate = useNavigate();
-  const user = useContext(userContext);
+  const { t } = useTranslation();
 
   const [email,setEmail]                = useState('');
   const [password,setPassword]          = useState('');
@@ -35,7 +35,7 @@ const SignIn = () => {
        }
 
        try {
-        const response = await axios.post('http://localhost:3000/api/signin', { email, password });
+        const response = await axios.post('https://full-stack-bank-app-anas-kh-4b7404c36087.herokuapp.com/api/signin', { email, password });
         const userData = response.data;
 
         window.localStorage.setItem("userLoggedIn", userData.username);
@@ -52,7 +52,7 @@ const SignIn = () => {
 
   return (
     <Card 
-    title={"Login"}
+    title={t("Login.Login")}
     warning={warning}
     body={
       <React.Fragment>
@@ -62,7 +62,7 @@ const SignIn = () => {
        <label htmlFor='email'>Email</label>
        <input type="email"
         id='email'
-        placeholder="example@company.com"
+        placeholder={t("Login.example@company.com")}
         value={email}
         onChange={e => {setEmail(e.target.value)
        !e.currentTarget.value ? setBtnDisabled(true) : setBtnDisabled(false)}}
@@ -70,10 +70,10 @@ const SignIn = () => {
        </div>
    
        <div>
-       <label htmlFor='password'>Password</label>
+       <label htmlFor='password'>{t("Login.Password")}</label>
        <input type="password"
         id='password'
-        placeholder="Type your Password"
+        placeholder={t("Login.Type your Password")}
         value={password}
         onChange={e => {setPassword(e.target.value)
         !e.currentTarget.value ? setBtnDisabled(true) : setBtnDisabled(false)}}
@@ -84,13 +84,13 @@ const SignIn = () => {
        <button type="submit"
        onClick={handleSignin}
        disabled={btnDisabled}
-       >Login</button>
+       >{t("Login.Login")}</button>
        </div>
        </form>
 
        <div className='have-account'>
-       <span>You don't have an account yet ?</span>
-       <Link to='/signup'>Sign up </Link>
+       <span>{t("Login.You don't have an account yet ?")}</span>
+       <Link to='/signup'>{t("Login.Sign up")} </Link>
        </div>
 
        </React.Fragment>

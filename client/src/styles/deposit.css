@@ -5,7 +5,7 @@
     margin-top: 1rem;
     border: 1px solid gray;
     border-radius: 0.2rem;
-    background: black;
+    background: linear-gradient(90deg, rgba(41, 83, 89, 1) 0%, rgba(4, 8, 34, 1) 100%);
     color: white;
 }
 
@@ -48,6 +48,7 @@
     font-family: var(--font-m);
     font-weight: 500;
     font-size: 1rem;
+    cursor: pointer;
 
 }
 

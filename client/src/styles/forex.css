@@ -33,7 +33,7 @@
 }
 
 .forex-table th {
-    background-color: #033821;
+    background: linear-gradient(90deg, rgba(41, 83, 89, 1) 0%, rgba(4, 8, 34, 1) 100%);
     color: #ffffff;
 }
 

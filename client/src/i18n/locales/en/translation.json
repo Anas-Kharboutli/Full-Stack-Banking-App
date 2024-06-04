@@ -1,8 +1,43 @@
 {
-    "Home" : "Home",
-    "Sign in" : "Sign in",
-    "Login" : "Login",
+    
+    
     "Logout" : "Logout",
+
+    "Home" : {
+        "Home" : "Home",
+        "Welcome to U bank" : "Welcome to U bank",
+        "You can now enjoy:" : "You can now enjoy:",
+        "Dedicated bank account number" : "Dedicated bank account number",
+        "Transactions saved on secured database" : "Transactions saved on secured database",
+        "Foreign Exchange Rates" : "Foreign Exchange Rates",
+        "Language Selection ENG/PL" : "Language Selection ENG/PL",
+        "Get Started" : "Get Started"
+    },
+
+    "Sign up" : {
+        "Sign up" : "Sign up",
+        "Username" : "Username",
+        "Enter your username" : "Enter your username",
+        "Email" : "Email",
+        "example@company.com" : "example@company.com",
+        "Password" : "Password",
+        "Type your Password" : "Type your password",
+        "Re-Type Password" : "Re-Type Password",
+        "Create Account" : "Create Account",
+        "Already have an account ?" : "Already have an account ?",
+        "Login" : "Login",
+        "You have successfully created your account !" : "You have successfully created your account !",
+        "You will be auto directed to sign in page" : "You will be auto directed to sign in page"
+    },
+
+    "Login" : {
+        "Login" : "Login",
+        "example@company.com" : "example@company.com",
+        "Password" : "Password",
+        "Type your Password" : "Type your password",
+        "You don't have an account yet ?" : "You don't have an account yet ?",
+        "Sign up" : "Sign up"
+    },
 
     "Forex" : {
         "Forex" : "Forex",
@@ -30,7 +65,12 @@
         "Amount of" : "Amount of",
         "is deducted from" : "is deducted from",
         "Withdraw again" : "Withdraw again"
-    }
-    
+    },
 
+    "Your Account" : {
+        "Your Account" : "Your Account",
+        "Username" : "Username",
+        "Account Number" : "Account Number",
+        "Balance" : "Balance"
+    }
 }

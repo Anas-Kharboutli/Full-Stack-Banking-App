@@ -12,7 +12,7 @@ const BankLogo = () => {
     <React.Fragment>
 
     <RiBankLine className='logo-img'/>
-    <span>Bank V2.0</span>
+    <span>U Bank</span>
 
   </React.Fragment>
   );
@@ -34,13 +34,13 @@ const Navbar = () => {
        
       <ul>
           <li className='nav-item'>
-          <NavLink to="/" onClick={() => setToggleMenu(false)}>{t("Home")}</NavLink>
+          <NavLink to="/" onClick={() => setToggleMenu(false)}>{t("Home.Home")}</NavLink>
           </li>
           <li className='nav-item'>
-          <NavLink to="/signup" onClick={() => setToggleMenu(false)}>{t("Sign up")}</NavLink>
+          <NavLink to="/signup" onClick={() => setToggleMenu(false)}>{t("Sign up.Sign up")}</NavLink>
           </li>
           <li className='nav-item'>
-          <NavLink to="/signin" onClick={() => setToggleMenu(false)}>{t("Login")}</NavLink>
+          <NavLink to="/signin" onClick={() => setToggleMenu(false)}>{t("Login.Login")}</NavLink>
           </li>
           <li className='nav-item'>
           <LanguageSelector />

@@ -1,8 +1,41 @@
 {
-    "Home" : "Strona Glówna",
-    "Login" : "Zaloguj",
-    "Sign up" : "Zarejestruj się",
     "Logout" : "wyloguj",
+
+    "Home" : {
+        "Home" : "Strona Główna",
+        "Welcome to U bank" : "Witamy w banku U",
+        "You can now enjoy:" : "Teraz możesz się cieszyć:",
+        "Dedicated bank account number" : "Dedykowany numer rachunku bankowego",
+        "Transactions saved on secured database" : "Transakcje zapisywane w zabezpieczonej bazie danych",
+        "Foreign Exchange Rates" : "Kursy wymiany walut",
+        "Language Selection ENG/PL" : "Wybór języka ENG/PL",
+        "Get Started" : "Zaczynaj"
+    },
+    
+    "Sign up" : {
+        "Sign up" : "Zarejestruj się",
+        "Username" : "Nazwa użytkownika",
+        "Enter your username" : "Wpisz twoją nazwę użytkownika",
+        "Email" : "Email",
+        "example@company.com" : "przykład@firma.com",
+        "Password" : "Hasło",
+        "Type your Password" : "Wpisz swoje hasło",
+        "Re-Type Password" : "Wpisz ponownie hasło",
+        "Create Account" : "Utwórz konto",
+        "Already have an account ?" : "Posiadasz już konto ?",
+        "Login" : "Zaloguj",
+        "You have successfully created your account !" : "Pomyślnie utworzyłeś swoje konto !",
+        "You will be auto directed to sign in page" : "Zostaniesz automatycznie przekierowany na stronę logowania"
+    },
+
+    "Login" : {
+        "Login" : "Zaloguj",
+        "example@company.com" : "przykład@firma.com",
+        "Password" : "Hasło",
+        "Type your Password" : "Wpisz swoje hasło",
+        "You don't have an account yet ?" : "Nie masz jeszcze konta?",
+        "Sign up" : "Zarejestruj się"
+    },
 
     "Forex" : {
         "Forex" : "Forex",
@@ -15,7 +48,7 @@
     "Deposit" : {
         "Deposit" : "wpłata",
         "Account Number" : "Numer konta",
-        "Balance" : "Balansować",
+        "Balance" : "Saldo",
         "Deposit Amount" : "Kwota depozytu",
         "Amount of" : "Ilość",
         "is credited to" : "przypisuje się",
@@ -25,10 +58,17 @@
     "Withdraw" : {
         "Withdraw" : "wypłata",
         "Account Number" : "Numer konta",
-        "Balance" : "Balansować",
+        "Balance" : "Saldo",
         "Withdrawal Amount" : "Kwota wypłaty",
         "Amount of" : "Ilość",
         "is deducted from" : "jest odliczany",
         "Withdraw again" : "Wypłać się ponownie"
-    } 
+    }, 
+
+    "Your Account" : {
+        "Your Account" : "Twoje konto",
+        "Username" : "Nazwa użytkownika",
+        "Account Number" : "Numer konta",
+        "Balance" : "Saldo"
+    }
 }

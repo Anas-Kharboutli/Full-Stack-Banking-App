@@ -38,7 +38,7 @@ export const ShareContext = ({children}) => {
   useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await axios.get(`http://localhost:3000/api/data?email=${email}`);
+          const response = await axios.get(`https://full-stack-bank-app-anas-kh-4b7404c36087.herokuapp.com/api/data?email=${email}`);
           setUser(response.data);
         } catch (error) {
           console.error('Error fetching data:', error);

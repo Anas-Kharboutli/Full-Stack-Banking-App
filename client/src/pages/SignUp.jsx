@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Card from '../components/Card';
 import axios from 'axios';
 import '../styles/signup.css';
+import { useTranslation } from 'react-i18next';
 
 const Loader = () => (
   <React.Fragment>
@@ -30,6 +31,7 @@ const Loader = () => (
 const SignUp = () => {
 
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const [username, setUserName]         = useState('');
   const [email,setEmail]                = useState('');
@@ -77,7 +79,7 @@ const SignUp = () => {
    
     //posting data to database using http request
    
-    await axios.post('http://localhost:3000/api/signup', {username,email,password})
+    await axios.post('https://full-stack-bank-app-anas-kh-4b7404c36087.herokuapp.com/api/signup', {username,email,password})
    .then( (res) => {
     if(res.status === 200) {
       setShow(false);
@@ -95,7 +97,7 @@ const SignUp = () => {
 
   return (
      
-      <Card title={"Sign up"}
+      <Card title={t("Sign up.Sign up")}
       warning={warning}
       body={ show ? (
       
@@ -103,10 +105,10 @@ const SignUp = () => {
       <form>
 
         <div>
-        <label htmlFor='username'>Username</label>
+        <label htmlFor='username'>{t("Sign up.Username")}</label>
         <input type="text"
         id='username'
-        placeholder="Enter your username"
+        placeholder={t("Sign up.Enter your username")}
         value={username}
         onChange={(e) => {setUserName(e.target.value)
         !e.currentTarget.value ? setBtnDisabled(true) : setBtnDisabled(false) }}
@@ -114,10 +116,10 @@ const SignUp = () => {
         </div>
    
        <div>
-       <label htmlFor='email'>Email</label>
+       <label htmlFor='email'>{t("Sign up.Email")}</label>
        <input type="email"
         id='email'
-        placeholder="example@company.com"
+        placeholder={t("Sign up.example@company.com")}
         value={email}
         onChange={e => {setEmail(e.target.value)
        !e.currentTarget.value ? setBtnDisabled(true) : setBtnDisabled(false)}}
@@ -125,10 +127,10 @@ const SignUp = () => {
        </div>
    
        <div>
-       <label htmlFor='password'>Password</label>
+       <label htmlFor='password'>{t("Sign up.Password")}</label>
        <input type="password"
         id='password'
-        placeholder="Type your Password"
+        placeholder={t("Sign up.Type your Password")}
         value={password}
         onChange={e => {setPassword(e.target.value)
         !e.currentTarget.value ? setBtnDisabled(true) : setBtnDisabled(false)}}
@@ -139,7 +141,7 @@ const SignUp = () => {
        </div>
    
        <div>
-       <label htmlFor='re-password'>Re-Type Password</label>
+       <label htmlFor='re-password'>{t("Sign up.Re-Type Password")}</label>
        <input type="password" 
         id='re-password'
         value={confirmedPwd}
@@ -154,24 +156,24 @@ const SignUp = () => {
        <button type="submit"
        onClick={handleSubmit}
        disabled={btnDisabled}
-       >Create Account</button>
+       >{t("Sign up.Create Account")}</button>
        </div>
        </form>
 
        <div className='have-account'>
-       <span>Already have an account ?</span>
-       <Link to='/signin'>Login </Link>
+       <span>{t("Sign up.Already have an account ?")}</span>
+       <Link to='/signin'>{t("Sign up.Login")} </Link>
        </div>
 
        </React.Fragment>
        
       ) : (
         <div className='welcome-msg'> 
-        <h1> You have successfully created your account !</h1>
+        <h1>{t("Sign up.You have successfully created your account !")} </h1>
        <div className='loader-container'>
         <Loader />
         </div>
-        <h4>You will be auto directed to sign in page</h4>
+        <h4>{t("Sign up.You will be auto directed to sign in page")}</h4>
         
         </div>
        )
