@@ -35,7 +35,7 @@ const SignIn = () => {
        }
 
        try {
-        const response = await axios.post('https://full-stack-bank-app-anas-kh-4b7404c36087.herokuapp.com/api/signin', { email, password });
+        const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/signin`, { email, password });
         const userData = response.data;
 
         window.localStorage.setItem("userLoggedIn", userData.username);

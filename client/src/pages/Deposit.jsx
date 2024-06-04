@@ -37,7 +37,7 @@ const Deposit = () => {
       return;
     }
     try {
-      await axios.post('https://full-stack-bank-app-anas-kh-4b7404c36087.herokuapp.com/api/deposit', { accountNumber, deposit } );    
+      await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/deposit`, { accountNumber, deposit } );    
       setShow(false);
     } catch (error) {
       console.error(error);

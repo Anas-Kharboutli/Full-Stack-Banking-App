@@ -79,7 +79,7 @@ const SignUp = () => {
    
     //posting data to database using http request
    
-    await axios.post('https://full-stack-bank-app-anas-kh-4b7404c36087.herokuapp.com/api/signup', {username,email,password})
+    await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/signup`, {username,email,password})
    .then( (res) => {
     if(res.status === 200) {
       setShow(false);

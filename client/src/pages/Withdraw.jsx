@@ -42,7 +42,7 @@ const Withdraw = () => {
     return;
     }
     try {
-      await axios.post('https://full-stack-bank-app-anas-kh-4b7404c36087.herokuapp.com/api/withdraw', { accountNumber, withdraw } );
+      await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/withdraw`, { accountNumber, withdraw } );
       setShow(false);
     } catch (error) {
       console.error(error);
