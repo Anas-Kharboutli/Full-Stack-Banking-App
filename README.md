@@ -17,6 +17,6 @@ You may view the app live on this [link](https://full-stack-bank-app.netlify.app
 - Transferrging from one account number to another
 
 ### Installation
-1 - Clone the repository to your local machine
-2- cd server
-3- npm start dev
+1. Clone the repository to your local machine
+2. cd server
+3. npm start dev
