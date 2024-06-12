@@ -23,14 +23,6 @@ export  const userContext = createContext();
 
 export const ShareContext = ({children}) => {
 
- /* const initialUserValue = {
-    username:"", 
-    email:"", 
-    password: "",
-    accountNumber:"", 
-    balance:0, 
-    }; 
-*/
 
   const [user, setUser] = useState([]);
   const email = localStorage.getItem("email");
@@ -46,7 +38,7 @@ export const ShareContext = ({children}) => {
       };
   
       fetchData();
-    }, []);
+    }, [email]);
     
   return (
     <userContext.Provider value={{user}}>
