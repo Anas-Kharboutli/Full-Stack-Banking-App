@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Card from '../components/Card';
+import { Loader } from './SignUp';
 import axios from 'axios';
 import '../styles/signin.css';
 import { useTranslation } from 'react-i18next';
@@ -14,6 +15,7 @@ const SignIn = () => {
   const [password,setPassword]          = useState('');
   const [warning, setWarning]           = useState('');
   const [btnDisabled, setBtnDisabled]   = useState(true);
+  const [loading, setLoading]           = useState(false);
 
    //finction to validate email format on front-end
    const isValidEmail = (emailInput) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput);
@@ -34,6 +36,8 @@ const SignIn = () => {
            return;
        }
 
+       setLoading(true);
+
        try {
         const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/signin`, { email, password });
         const userData = response.data;
@@ -41,8 +45,12 @@ const SignIn = () => {
         window.localStorage.setItem("userLoggedIn", userData.username);
         window.localStorage.setItem("email", userData.email);
 
-        navigate('/deposit');
-        window.location.reload();
+        if(response.status === 200) {
+          navigate('/deposit');
+          window.location.reload();
+        }
+
+        
         
       } catch (error) {
         setWarning("Invalid email or password");
@@ -84,7 +92,15 @@ const SignIn = () => {
        <button type="submit"
        onClick={handleSignin}
        disabled={btnDisabled}
-       >{t("Login.Login")}</button>
+       >{
+        loading ? 
+        <>
+        Verifying Credentials <Loader />
+        </> 
+        :
+        t("Login.Login")
+       }
+       </button>
        </div>
        </form>
 

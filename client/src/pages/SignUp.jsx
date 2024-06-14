@@ -5,7 +5,7 @@ import axios from 'axios';
 import '../styles/signup.css';
 import { useTranslation } from 'react-i18next';
 
-const Loader = () => (
+export const Loader = () => (
   <React.Fragment>
   <div className="loader">
     <div className="dot"></div>
